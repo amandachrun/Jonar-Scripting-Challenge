@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx mocha --no-timeouts --parallel 'test/*js'"
+    "test": "npx mocha --no-timeouts 'test/*js'"
   },
   "repository": {
     "type": "git",
