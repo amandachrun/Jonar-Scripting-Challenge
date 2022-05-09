@@ -20,12 +20,12 @@ describe("Registration tests", function(){
         //await driver.get("https://get.paragon-erp.com/learn-more-paragonsmb/");
 
         // fills the fields
-        await driver.findElement(By.id("companyname")).sendKeys("Starbucks", Key.RETURN);  
-        await driver.findElement(By.id("first_name")).sendKeys("Kelly", Key.TAB);
-        await driver.findElement(By.id("last_name")).sendKeys("Clarkson", Key.TAB);
-        await driver.findElement(By.id("email")).sendKeys("kelly@email.com", Key.TAB);
-        await driver.findElement(By.id("industry")).sendKeys("Medical", Key.TAB);
-        await driver.findElement(By.id("phone_number")).sendKeys("514-778-3333", Key.TAB);
+        driver.findElement(By.id("companyname")).sendKeys("Starbucks", Key.RETURN);  
+        driver.findElement(By.id("first_name")).sendKeys("Kelly", Key.TAB);
+        driver.findElement(By.id("last_name")).sendKeys("Clarkson", Key.TAB);
+        driver.findElement(By.id("email")).sendKeys("kelly@email.com", Key.TAB);
+        driver.findElement(By.id("industry")).sendKeys("Medical", Key.TAB);
+        driver.findElement(By.id("phone_number")).sendKeys("514-778-3333", Key.TAB);
 
 
         //asserts the textbox inputs
