@@ -29,7 +29,7 @@ describe("Registration tests", function(){
 
 
         //asserts the textbox inputs
-        let company_name = await driver.findElement(By.xpath('//*[@id="companyname"]')).getText().then(function(value){
+        let company_name = await driver.findElement(By.id("companyname")).getText().then(function(value){
             return value;
         });
         company_name.should.equal("Starbucks");
