@@ -17,14 +17,10 @@ describe("Registration tests", function(){
         await driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/a[3]")).click();
         await driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[1]/div/div[6]/a")).click();
 
-        // fills / asserts the form
-        await driver.findElement(By.id("companyname")).sendKeys("Starbucks", Key.TAB);  
-        let company_name = await driver.findElement(By.id("companyname")).getText().then(function(value){
-            return value;
-        });
-        company_name.should.equal("Starbucks");
-        
+        //await driver.get("https://get.paragon-erp.com/learn-more-paragonsmb/");
 
+        // fills the fields
+        await driver.findElement(By.id("companyname")).sendKeys("Starbucks", Key.RETURN);  
         await driver.findElement(By.id("first_name")).sendKeys("Kelly", Key.TAB);
         await driver.findElement(By.id("last_name")).sendKeys("Clarkson", Key.TAB);
         await driver.findElement(By.id("email")).sendKeys("kelly@email.com", Key.TAB);
@@ -32,32 +28,36 @@ describe("Registration tests", function(){
         await driver.findElement(By.id("phone_number")).sendKeys("514-778-3333", Key.TAB);
 
 
+        //asserts the textbox inputs
+        let company_name = await driver.findElement(By.xpath('//*[@id="companyname"]')).getText().then(function(value){
+            return value;
+        });
+        company_name.should.equal("Starbucks");
 
+        var first_name = await driver.findElement(By.id("first_name")).getText().then(function(value){
+             return value;
+        });
+        first_name.should.equal("Kelly");
 
-        // var first_name = await driver.findElement(By.id("first_name")).getText().then(function(value){
-        //     return value;
-        // });
-        // first_name.should.equal("Kelly");
+        var last_name = await driver.findElement(By.id("last_name")).getText().then(function(value){
+             return value;
+        });
+        last_name.should.equal("Clarkson");
 
-        // var last_name = await driver.findElement(By.id("last_name")).getText().then(function(value){
-        //     return value;
-        // });
-        // last_name.should.equal("Clarkson");
+        var email = await driver.findElement(By.id("email")).getText().then(function(value){
+            return value;
+        });
+        email.should.equal("kelly@email.com");
 
-        // var email = await driver.findElement(By.id("email")).getText().then(function(value){
-        //     return value;
-        // });
-        // email.should.equal("kelly@email.com");
-
-        // var industry = await driver.findElement(By.id("industry")).getText().then(function(value){
-        //     return value;
-        // });
-        // industry.should.equal("Medical");
+        var industry = await driver.findElement(By.id("industry")).getText().then(function(value){
+            return value;
+        });
+        industry.should.equal("Medical");
         
-        //  var phone_number = await driver.findElement(By.id("phone_number")).getText().then(function(value){
-        //     return value;
-        // });
-        // phone_number.should.equal("514-778-3333")
+        var phone_number = await driver.findElement(By.id("phone_number")).getText().then(function(value){
+            return value;
+        });
+        phone_number.should.equal("514-778-3333")
 
         //submits
 
