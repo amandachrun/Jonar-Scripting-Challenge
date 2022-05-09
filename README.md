@@ -10,7 +10,10 @@ Tech Stack Used:
 - Mocha as a framework
 
 How to Run:
-- Install https://nodejs.org/en/
+- Install nodeJS https://nodejs.org/en/
 - Install broswer driver(s) https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/
-- Set up a path environment variable for the newly installed driver(s)
+- Set up a path environment variable for the newly installed driver(s) (in this case, Firefox is used)
 - From a console type in 'npm test' to run
+
+NOTE: Script is located inside /test
+
